@@ -32,7 +32,7 @@ struct ContentView: View {
     }
     var body: some View {
         NavigationView{
-            Form{
+            ScrollView{
                 VStack(alignment: .leading, spacing: 0) {
                     Text("When do you want to wake up")
                         .font(.headline)
@@ -41,7 +41,7 @@ struct ContentView: View {
                         //to hide the label
                         .labelsHidden()
                         .datePickerStyle(WheelDatePickerStyle())
-                }
+                }.addBackgroundStyle()
                 
                 
                 VStack(alignment: .leading, spacing: 0) {
@@ -51,7 +51,7 @@ struct ContentView: View {
                     Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
                         Text("\(sleepAmount, specifier: "%g") hours")
                     }
-                }
+                }.addBackgroundStyle()
                 
                 
                 VStack(alignment: .leading, spacing: 0) {
@@ -65,9 +65,9 @@ struct ContentView: View {
                             Text("\(coffeeAmount) cups ☕️☕️")
                         }
                     }
-                }
-                
+                }.addBackgroundStyle()
             }
+            
             .navigationBarTitle("Better Rest")
             .navigationBarItems(trailing: Button(action: calculateBedtime){
                 Text("Calculate")

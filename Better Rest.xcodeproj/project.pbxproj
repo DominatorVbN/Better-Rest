@@ -16,6 +16,7 @@
 		8356EFEC2369F8E400B6B915 /* Better_RestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8356EFEB2369F8E400B6B915 /* Better_RestTests.swift */; };
 		8356EFF72369F8E400B6B915 /* Better_RestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8356EFF62369F8E400B6B915 /* Better_RestUITests.swift */; };
 		83FB357A236B72BE00858547 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 83FB3579236B72BE00858547 /* SleepCalculator.mlmodel */; };
+		83FB357D236B7D9B00858547 /* Backgroundmodifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB357C236B7D9B00858547 /* Backgroundmodifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8356EFF62369F8E400B6B915 /* Better_RestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Better_RestUITests.swift; sourceTree = "<group>"; };
 		8356EFF82369F8E400B6B915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83FB3579236B72BE00858547 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
+		83FB357C236B7D9B00858547 /* Backgroundmodifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgroundmodifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		8356EFD32369F8DC00B6B915 /* Better Rest */ = {
 			isa = PBXGroup;
 			children = (
+				83FB357B236B7D8400858547 /* Modifiers */,
 				8356EFD42369F8DC00B6B915 /* AppDelegate.swift */,
 				8356EFD62369F8DC00B6B915 /* SceneDelegate.swift */,
 				8356EFD82369F8DC00B6B915 /* ContentView.swift */,
@@ -137,6 +140,14 @@
 				8356EFF82369F8E400B6B915 /* Info.plist */,
 			);
 			path = "Better RestUITests";
+			sourceTree = "<group>";
+		};
+		83FB357B236B7D8400858547 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				83FB357C236B7D9B00858547 /* Backgroundmodifiers.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				8356EFD52369F8DC00B6B915 /* AppDelegate.swift in Sources */,
 				83FB357A236B72BE00858547 /* SleepCalculator.mlmodel in Sources */,
 				8356EFD72369F8DC00B6B915 /* SceneDelegate.swift in Sources */,
+				83FB357D236B7D9B00858547 /* Backgroundmodifiers.swift in Sources */,
 				8356EFD92369F8DC00B6B915 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
