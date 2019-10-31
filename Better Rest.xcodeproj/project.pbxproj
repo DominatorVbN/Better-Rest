@@ -15,6 +15,7 @@
 		8356EFE12369F8E400B6B915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8356EFDF2369F8E400B6B915 /* LaunchScreen.storyboard */; };
 		8356EFEC2369F8E400B6B915 /* Better_RestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8356EFEB2369F8E400B6B915 /* Better_RestTests.swift */; };
 		8356EFF72369F8E400B6B915 /* Better_RestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8356EFF62369F8E400B6B915 /* Better_RestUITests.swift */; };
+		83FB357A236B72BE00858547 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 83FB3579236B72BE00858547 /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8356EFF22369F8E400B6B915 /* Better RestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Better RestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8356EFF62369F8E400B6B915 /* Better_RestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Better_RestUITests.swift; sourceTree = "<group>"; };
 		8356EFF82369F8E400B6B915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83FB3579236B72BE00858547 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				8356EFD42369F8DC00B6B915 /* AppDelegate.swift */,
 				8356EFD62369F8DC00B6B915 /* SceneDelegate.swift */,
 				8356EFD82369F8DC00B6B915 /* ContentView.swift */,
+				83FB3579236B72BE00858547 /* SleepCalculator.mlmodel */,
 				8356EFDA2369F8E400B6B915 /* Assets.xcassets */,
 				8356EFDF2369F8E400B6B915 /* LaunchScreen.storyboard */,
 				8356EFE22369F8E400B6B915 /* Info.plist */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8356EFD52369F8DC00B6B915 /* AppDelegate.swift in Sources */,
+				83FB357A236B72BE00858547 /* SleepCalculator.mlmodel in Sources */,
 				8356EFD72369F8DC00B6B915 /* SceneDelegate.swift in Sources */,
 				8356EFD92369F8DC00B6B915 /* ContentView.swift in Sources */,
 			);
