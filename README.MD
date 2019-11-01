@@ -6,13 +6,13 @@
 # Light mode
 
 <p float="left">
-  <img src="/redmeresources/betterrest.png" width="300" />
-  <img src="/redmeresources/betterrest.png" width="300" /> 
+  <img src="/redmeresources/betterrest.png" width="400" />
+  <img src="/redmeresources/betterrest.png" width="400" /> 
 </p>
 
 # Dark mode
 
 <p float="left">
-  <img src="/redmeresources/betterrestdark.png" width="300" />
-  <img src="/redmeresources/betterrestdarkinline.png" width="300" /> 
+  <img src="/redmeresources/betterrestdark.png" width="400" />
+  <img src="/redmeresources/betterrestdarkinline.png" width="400" /> 
 </p>
