@@ -25,11 +25,6 @@ struct ContentView: View {
         return  "\(dateFormatter.string(from: st))"
     }
     
-    //    @State private var alertTitle = ""
-    //
-    //    @State private var alertMessage = ""
-    //
-    //    @State private var showAlert = false
     
     static var defaultWakeUp: Date{
         var dateComponents = DateComponents()
@@ -95,12 +90,6 @@ struct ContentView: View {
             }
                 
             .navigationBarTitle("Better Rest")
-            //            .navigationBarItems(trailing: Button(action: calculateBedtime){
-            //                Text("Calculate")
-            //            })
-            //                .alert(isPresented: $showAlert, content: {
-            //                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("Ok")))
-            //                })
         }
     }
     
@@ -115,18 +104,9 @@ struct ContentView: View {
             let prediction = try model.prediction(wake: Double(hoursInSeconds + minutesInSeconds), estimatedSleep: Double(sleepAmount), coffee: Double(coffeeAmount))
             let sleepTime = wakeUp - prediction.actualSleep
             return sleepTime
-            //            let dateFormatter = DateFormatter()
-            //            dateFormatter.timeStyle = .short
-            //            alertMessage = "\(dateFormatter.string(from: sleepTime))"
-            //            alertTitle = "Your ideal sleeptime is..."
         }catch{
             return Date()
-            //            alertTitle = "Error"
-            //            alertMessage = "Sorry there was a problem calculating your bedtime!"
-            //            print(error)
-            //            //something went wrong
         }
-        //        showAlert = true
     }
 }
 
