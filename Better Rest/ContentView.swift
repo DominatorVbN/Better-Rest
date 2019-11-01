@@ -18,11 +18,18 @@ struct ContentView: View {
     //to track number of cup of daily coffe intake
     @State private var coffeeAmount = 1
     
-    @State private var alertTitle = ""
+    var sleepTime: String {
+        let st = calculateBedtime()
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        return  "\(dateFormatter.string(from: st))"
+    }
     
-    @State private var alertMessage = ""
-    
-    @State private var showAlert = false
+    //    @State private var alertTitle = ""
+    //
+    //    @State private var alertMessage = ""
+    //
+    //    @State private var showAlert = false
     
     static var defaultWakeUp: Date{
         var dateComponents = DateComponents()
@@ -50,6 +57,7 @@ struct ContentView: View {
                     
                     Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
                         Text("\(sleepAmount, specifier: "%g") hours")
+                            .font(.subheadline)
                     }
                 }.addBackgroundStyle()
                 
@@ -60,25 +68,43 @@ struct ContentView: View {
                     
                     Stepper(value: $coffeeAmount, in: 1...20){
                         if coffeeAmount == 1{
-                            Text("1 cup ☕️")
+                            Text("1 ☕️")
+                                .font(.largeTitle)
+                        }else if coffeeAmount < 3{
+                            Text("\(coffeeAmount) ☕️☕️")
+                                .font(.largeTitle)
+                        }else if coffeeAmount < 6{
+                            Text("\(coffeeAmount) ☕️☕️☕️")
+                            .font(.largeTitle)
                         }else{
-                            Text("\(coffeeAmount) cups ☕️☕️")
+                            Text("\(coffeeAmount) ☕️☕️☕️☕️")
+                            .font(.largeTitle)
                         }
                     }
                 }.addBackgroundStyle()
+                
+                VStack(alignment: .center, spacing: 0) {
+                    Text("Your should sleep at")
+                        .font(.headline)
+                    Text("\(sleepTime)")
+                        .font(.largeTitle)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .addBackgroundStyle()
+                .padding(.bottom)
             }
-            
+                
             .navigationBarTitle("Better Rest")
-            .navigationBarItems(trailing: Button(action: calculateBedtime){
-                Text("Calculate")
-            })
-                .alert(isPresented: $showAlert, content: {
-                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("Ok")))
-                })
+            //            .navigationBarItems(trailing: Button(action: calculateBedtime){
+            //                Text("Calculate")
+            //            })
+            //                .alert(isPresented: $showAlert, content: {
+            //                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("Ok")))
+            //                })
         }
     }
     
-    func calculateBedtime(){
+    func calculateBedtime()->Date{
         let model = SleepCalculator()
         
         let dateComponents = Calendar.current.dateComponents([.hour,.minute], from: wakeUp)
@@ -88,17 +114,19 @@ struct ContentView: View {
         do{
             let prediction = try model.prediction(wake: Double(hoursInSeconds + minutesInSeconds), estimatedSleep: Double(sleepAmount), coffee: Double(coffeeAmount))
             let sleepTime = wakeUp - prediction.actualSleep
-            let dateFormatter = DateFormatter()
-            dateFormatter.timeStyle = .short
-            alertMessage = "\(dateFormatter.string(from: sleepTime))"
-            alertTitle = "Your ideal sleeptime is..."
+            return sleepTime
+            //            let dateFormatter = DateFormatter()
+            //            dateFormatter.timeStyle = .short
+            //            alertMessage = "\(dateFormatter.string(from: sleepTime))"
+            //            alertTitle = "Your ideal sleeptime is..."
         }catch{
-            alertTitle = "Error"
-            alertMessage = "Sorry there was a problem calculating your bedtime!"
-            print(error)
-            //something went wrong
+            return Date()
+            //            alertTitle = "Error"
+            //            alertMessage = "Sorry there was a problem calculating your bedtime!"
+            //            print(error)
+            //            //something went wrong
         }
-        showAlert = true
+        //        showAlert = true
     }
 }
 
